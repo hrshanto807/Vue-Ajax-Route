@@ -7,15 +7,15 @@ const blogPosts = ref([]);
 
 const allPosts = ref([]);
 const offset = ref(0);
-const limit = 10;
+const limit = 9;
 
 onBeforeMount(async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     blogPosts.value = await response.json();
 
     allPosts.value = blogPosts.value;
-        //   10 post
-    blogPosts.value = blogPosts.value.slice(0, 10);
+        //   6 post
+    blogPosts.value = blogPosts.value.slice(0, 9);
 
 });
 
